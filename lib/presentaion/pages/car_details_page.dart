@@ -1,3 +1,4 @@
+import 'package:car_rent_app/presentaion/pages/maps_details_page.dart';
 import 'package:car_rent_app/presentaion/widgets/car_card.dart';
 import 'package:car_rent_app/presentaion/widgets/more_card.dart';
 import 'package:flutter/material.dart';
@@ -18,15 +19,16 @@ class CarDetailsPage extends StatelessWidget {
           children: [Icon(Icons.info_outline), Text("Information")],
         ),
       ),
-      body: SingleChildScrollView( // Added by me
+      body: SingleChildScrollView(
+        // Added by me
         child: Column(
           children: [
             CarCard(
               car: Car(
-                  model: 'Fortuner GR',
-                  distance: 870,
-                  fuelCapacity: 50,
-                  pricePerHour: 45),
+                  model: car.model,
+                  distance: car.distance,
+                  fuelCapacity: car.fuelCapacity,
+                  pricePerHour: car.pricePerHour),
             ),
             const SizedBox(
               height: 20,
@@ -72,19 +74,24 @@ class CarDetailsPage extends StatelessWidget {
                     width: 20,
                   ),
                   Expanded(
-                    child: Container(
-                      height: 170,
-                      decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(20),
-                          image: const DecorationImage(
-                              image: AssetImage("assets/maps.png"),
-                              fit: BoxFit.cover),
-                          boxShadow: [
-                            BoxShadow(
-                                color: Colors.black12,
-                                blurRadius: 10,
-                                spreadRadius: 5)
-                          ]),
+                    child: GestureDetector(
+                      onTap: (){
+                        Navigator.push(context,MaterialPageRoute(builder: (context) => MapsDetailsPage(car: car)));
+                      },
+                      child: Container(
+                        height: 170,
+                        decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(20),
+                            image: const DecorationImage(
+                                image: AssetImage("assets/maps.png"),
+                                fit: BoxFit.cover),
+                            boxShadow: [
+                              BoxShadow(
+                                  color: Colors.black12,
+                                  blurRadius: 10,
+                                  spreadRadius: 5)
+                            ]),
+                      ),
                     ),
                   )
                 ],
@@ -96,28 +103,34 @@ class CarDetailsPage extends StatelessWidget {
                 children: [
                   MoreCard(
                     car: Car(
-                        model: 'Fortuner GR',
-                        distance: 870,
-                        fuelCapacity: 50,
-                        pricePerHour: 45),
+                        model: car.model+"-1",
+                        distance: car.distance+100,
+                        fuelCapacity: car.fuelCapacity+100,
+                        pricePerHour: car.pricePerHour+10),
                   ),
-                  SizedBox(height: 5,),
+                  SizedBox(
+                    height: 5,
+                  ),
                   MoreCard(
                     car: Car(
-                        model: 'Fortuner GR',
-                        distance: 870,
-                        fuelCapacity: 50,
-                        pricePerHour: 45),
+                        model: car.model+"-2",
+                        distance: car.distance+200,
+                        fuelCapacity: car.fuelCapacity+200,
+                        pricePerHour: car.pricePerHour+20),
                   ),
-                  SizedBox(height: 5,),
+                  SizedBox(
+                    height: 5,
+                  ),
                   MoreCard(
                     car: Car(
-                        model: 'Fortuner GR',
-                        distance: 870,
-                        fuelCapacity: 50,
-                        pricePerHour: 45),
+                        model: car.model+"-3",
+                        distance: car.distance+300,
+                        fuelCapacity: car.fuelCapacity+300,
+                        pricePerHour: car.pricePerHour+30),
                   ),
-                  SizedBox(height: 5,),
+                  SizedBox(
+                    height: 5,
+                  ),
                   MoreCard(
                     car: Car(
                         model: 'Fortuner GR',
