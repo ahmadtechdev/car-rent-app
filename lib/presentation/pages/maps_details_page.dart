@@ -1,4 +1,4 @@
-import 'package:car_rent_app/presentaion/data/models/car.dart';
+import '../../data/models/car.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_map/flutter_map.dart';
 import 'package:latlong2/latlong.dart';

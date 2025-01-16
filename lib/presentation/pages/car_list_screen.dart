@@ -1,7 +1,7 @@
-import 'package:car_rent_app/presentaion/widgets/car_card.dart';
+import 'package:car_rent_app/presentation/widgets/car_card.dart';
 import 'package:flutter/material.dart';
 
-import '../data/models/car.dart';
+import '../../data/models/car.dart';
 
 class CarListScreen extends StatelessWidget {
   CarListScreen({super.key});

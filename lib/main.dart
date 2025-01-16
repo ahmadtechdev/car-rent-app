@@ -3,7 +3,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 
-import 'presentaion/pages/onboarding_page.dart';
+import 'presentation/pages/onboarding_page.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();

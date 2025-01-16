@@ -1,4 +1,4 @@
-import 'package:car_rent_app/presentaion/pages/car_list_screen.dart';
+import 'package:car_rent_app/presentation/pages/car_list_screen.dart';
 import 'package:flutter/material.dart';
 
 class OnboardingPage extends StatelessWidget {
